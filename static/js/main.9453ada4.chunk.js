@@ -1,0 +1,2 @@
+(this["webpackJsonpstock-react-capstone"]=this["webpackJsonpstock-react-capstone"]||[]).push([[0],{11:function(t,c,e){"use strict";e.r(c);var n=e(1),s=e.n(n),o=e(3),r=e.n(o),a=(e(8),e(9),e(0));var i=function(){return Object(a.jsx)("div",{className:"App",children:"Stock Market"})};r.a.render(Object(a.jsx)(s.a.StrictMode,{children:Object(a.jsx)(i,{})}),document.getElementById("root"))},8:function(t,c,e){},9:function(t,c,e){}},[[11,1,2]]]);
+//# sourceMappingURL=main.9453ada4.chunk.js.map

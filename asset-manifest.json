@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/stock-react-capstone/static/css/main.e7ce2ea4.chunk.css",
+    "main.js": "/stock-react-capstone/static/js/main.9453ada4.chunk.js",
+    "main.js.map": "/stock-react-capstone/static/js/main.9453ada4.chunk.js.map",
+    "runtime-main.js": "/stock-react-capstone/static/js/runtime-main.6ff1888d.js",
+    "runtime-main.js.map": "/stock-react-capstone/static/js/runtime-main.6ff1888d.js.map",
+    "static/js/2.a75f21ea.chunk.js": "/stock-react-capstone/static/js/2.a75f21ea.chunk.js",
+    "static/js/2.a75f21ea.chunk.js.map": "/stock-react-capstone/static/js/2.a75f21ea.chunk.js.map",
+    "index.html": "/stock-react-capstone/index.html",
+    "static/css/main.e7ce2ea4.chunk.css.map": "/stock-react-capstone/static/css/main.e7ce2ea4.chunk.css.map",
+    "static/js/2.a75f21ea.chunk.js.LICENSE.txt": "/stock-react-capstone/static/js/2.a75f21ea.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6ff1888d.js",
+    "static/js/2.a75f21ea.chunk.js",
+    "static/css/main.e7ce2ea4.chunk.css",
+    "static/js/main.9453ada4.chunk.js"
+  ]
+}
