@@ -1,35 +1,35 @@
 import axios from 'axios';
 import {
-  FETCH_USERS_REQUEST,
-  FETCH_USERS_SUCCESS,
-  FETCH_USERS_FAILURE,
+  FETCH_STOCK_REQUEST,
+  FETCH_STOCK_SUCCESS,
+  FETCH_STOCK_FAILURE,
 } from './stockTypes';
 
-const fetchUsersRequest = () => ({
-  type: FETCH_USERS_REQUEST,
+const fetchStockRequest = () => ({
+  type: FETCH_STOCK_REQUEST,
 });
 
-const fetchUsersSuccess = (users) => ({
-  type: FETCH_USERS_SUCCESS,
-  payload: users,
+const fetchStockSuccess = (stocks) => ({
+  type: FETCH_STOCK_SUCCESS,
+  payload: stocks,
 });
 
-const fetchUsersFailure = (error) => ({
-  type: FETCH_USERS_FAILURE,
+const fetchStockFailure = (error) => ({
+  type: FETCH_STOCK_FAILURE,
   payload: error,
 });
 
-const fetchUsers = () => (dispatch) => {
-  dispatch(fetchUsersRequest);
+const fetchStock = () => (dispatch) => {
+  dispatch(fetchStockRequest);
   axios.get('https://jsonplaceholder.typicode.com/users')
     .then((response) => {
-      const users = response.data;
-      dispatch(fetchUsersSuccess(users));
+      const stocks = response.data;
+      dispatch(fetchStockSuccess(stocks));
     })
     .catch((error) => {
       const errorMsg = error.message;
-      dispatch(fetchUsersFailure(errorMsg));
+      dispatch(fetchStockFailure(errorMsg));
     });
 };
 
-export default fetchUsers;
+export default fetchStock;

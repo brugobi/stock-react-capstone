@@ -2,24 +2,24 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import fetchUsers from '../redux/stock/stockActions';
+import fetchStock from '../redux/stock/stockActions';
 
-const StockContainer = ({ userData, fetchUsers }) => {
+const StockContainer = ({ stockData, fetchStock }) => {
   useEffect(() => {
-    fetchUsers();
+    fetchStock();
   }, []);
   
-  if (userData.error) {
-    <h2>{userData.error}</h2>
-  } if (userData.loading) {
+  if (stockData.error) {
+    <h2>{stockData.error}</h2>
+  } if (stockData.loading) {
     <h2>Loading</h2>
   } return (
     
     <div>
-      <h2>User List</h2>
+      <h2>Stock List</h2>
       <div>
-        {userData
-          && userData.users && userData.users.map((user) => (
+        {stockData
+          && stockData.stocks && stockData.stocks.map((user) => (
           <p key={user.id}>{user.name}</p>
         ))}
       </div>
@@ -28,18 +28,18 @@ const StockContainer = ({ userData, fetchUsers }) => {
 }
 
 const mapStateToProps = (state) => ({
-  userData: state,
+  stockData: state,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchUsers: () => dispatch(fetchUsers()),
+  fetchStock: () => dispatch(fetchStock()),
 });
 
 StockContainer.propTypes = {
   userData: PropTypes.object.isRequired,
   mapStateToProps: PropTypes.func.isRequired,
   mapDispatchToProps: PropTypes.func.isRequired,
-  fetchUsers: PropTypes.func.isRequired,
+  fetchStock: PropTypes.func.isRequired,
 };
 
 export default connect(
