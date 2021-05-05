@@ -18,9 +18,8 @@ const StockContainer = ({ stockData, fetchStock }) => {
     <div>
       <h2>Stock List</h2>
       <div>
-        {stockData
-          && stockData.stocks && stockData.stocks.map((user) => (
-          <p key={user.id}>{user.name}</p>
+        {stockData.stocks.map((stock) => (
+            <p key={stock.symbol}>{stock.symbol}</p>
         ))}
       </div>
     </div>
