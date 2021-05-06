@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import fetchStock from '../redux/stock/stockActions';
+import { fetchStock } from '../redux/stock/stockActions';
 
 const StockContainer = ({ stockData, fetchStock }) => {
   useEffect(() => {
@@ -18,13 +18,14 @@ const StockContainer = ({ stockData, fetchStock }) => {
     <div>
       <h2>Stock List</h2>
       <div className="container">
-        {stockData.stocks.slice(0, 10).map((stock) => (
+        {stockData.stocks.slice(0, 20).map((stock) => (
           <div className="card-wrapper">
-            <div className="card stock-card" key={stock.symbol}>
+            <div className="card stock-card" key={stock.ticker}>
               <div className="content">
-                <p>{stock.name}({stock.symbol})</p>
-                <p className="price">${stock.price}</p>
-                <p>{stock.exchange}</p>
+                <p>({stock.ticker})</p>
+                <p>{stock.companyName}</p>
+                <p className="price">{stock.price}</p>
+                <p>{stock.changesPercentage}</p>
               </div>
               <div class="card-footer">
                 <button class="button is-danger is-light btn-more card-footer-item">See More</button>

@@ -3,6 +3,7 @@ import {
   FETCH_STOCK_REQUEST,
   FETCH_STOCK_SUCCESS,
   FETCH_STOCK_FAILURE,
+  CHANGE_FILTER,
 } from './stockTypes';
 
 const fetchStockRequest = () => ({
@@ -19,9 +20,14 @@ const fetchStockFailure = (error) => ({
   payload: error,
 });
 
+const filterStock = (filter) => ({
+  type: CHANGE_FILTER,
+  payload: filter,
+});
+
 const fetchStock = () => (dispatch) => {
   dispatch(fetchStockRequest);
-  axios.get('https://financialmodelingprep.com/api/v3/stock/list?apikey=KEY')
+  axios.get('https://financialmodelingprep.com/api/v3/actives?apikey=KEY')
     .then((response) => {
       const stocks = response.data;
       dispatch(fetchStockSuccess(stocks));
@@ -32,4 +38,7 @@ const fetchStock = () => (dispatch) => {
     });
 };
 
-export default fetchStock;
+export {
+  fetchStock,
+  filterStock,
+};
