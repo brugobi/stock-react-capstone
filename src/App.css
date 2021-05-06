@@ -2,3 +2,34 @@
   text-align: center;
   color: white;
 }
+
+.stock-card {
+  padding-top: 20px;
+  border: 2px solid #ff4081;
+}
+
+.card-wrapper {
+  padding-top: 30px;
+}
+
+.price {
+  color: #c51162;
+}
+
+.card {
+  background-color: black !important;
+}
+
+.btn-more {
+  width: 100%;
+  color: white !important;
+  background-color: #ff4081 !important;
+  opacity: 60%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 15px;
+}

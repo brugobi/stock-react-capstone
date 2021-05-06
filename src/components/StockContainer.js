@@ -8,18 +8,29 @@ const StockContainer = ({ stockData, fetchStock }) => {
   useEffect(() => {
     fetchStock();
   }, []);
-  
+
   if (stockData.error) {
     <h2>{stockData.error}</h2>
   } if (stockData.loading) {
     <h2>Loading</h2>
   } return (
-    
+
     <div>
       <h2>Stock List</h2>
-      <div>
-        {stockData.stocks.map((stock) => (
-            <p key={stock.symbol}>{stock.symbol}</p>
+      <div className="container">
+        {stockData.stocks.slice(0, 10).map((stock) => (
+          <div className="card-wrapper">
+            <div className="card stock-card" key={stock.symbol}>
+              <div className="content">
+                <p>{stock.name}({stock.symbol})</p>
+                <p className="price">${stock.price}</p>
+                <p>{stock.exchange}</p>
+              </div>
+              <div class="card-footer">
+                <button class="button is-danger is-light btn-more card-footer-item">See More</button>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
     </div>
