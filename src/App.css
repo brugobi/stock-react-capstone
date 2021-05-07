@@ -5,7 +5,7 @@
 
 .stock-card {
   padding-top: 20px;
-  border: 2px solid #ff4081;
+  border: 1px solid #4c79f2;
 }
 
 .card-wrapper {
@@ -13,7 +13,7 @@
 }
 
 .price {
-  color: #c51162;
+  color: #11c511;
 }
 
 .card {
@@ -23,7 +23,7 @@
 .btn-more {
   width: 100%;
   color: white !important;
-  background-color: #ff4081 !important;
+  background-color: #4c79f2 !important;
   opacity: 60%;
 }
 
@@ -32,4 +32,8 @@
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 15px;
+}
+
+.navbar-custom {
+  background-color: black !important;
 }

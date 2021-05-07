@@ -1,28 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import changeFilter from '../redux/stock/filter/filterActions';
 
-const CategoryFilter = ({ handleFilter }) => {
+const FilterContainer = ({ changeFilter }) => {
   const categories = ['All', 'Profitable', 'Unprofitable'];
 
   const filterByCat = (e) => {
     const cat = e.target.value;
-    handleFilter(cat);
+    changeFilter(cat);
   };
 
   return (
 
-    <nav className="navbar navbar-custom box" role="navigation" aria-label="main navigation">
+    <nav className="navbar" role="navigation" aria-label="main navigation">
 
       <div className="navbar-brand">
         <div className="navbar-item">
-          <div className="brand Bookstore-CMS">Globl Market</div>
+          <div className="brand">Global Market</div>
         </div>
       </div>
 
       <div className="navbar-menu">
-        <div className="navbar-item CATEGORIES">
-          <div className="control">
-            <div className="">Filter by: </div>
+        <div className="navbar-item">
+          <div>
+            <div>Filter by: </div>
           </div>
           <select name="filter" id="filter" onChange={filterByCat}>
             {categories.map((cat) => (
@@ -41,8 +43,15 @@ const CategoryFilter = ({ handleFilter }) => {
   );
 };
 
-CategoryFilter.propTypes = {
-  handleFilter: PropTypes.func.isRequired,
+const mapDispatchToProps = (dispatch) => ({
+  changeFilter: (categories) => dispatch(changeFilter(categories)),
+});
+
+FilterContainer.propTypes = {
+  changeFilter: PropTypes.func.isRequired,
 };
 
-export default CategoryFilter;
+export default connect(
+  null,
+  mapDispatchToProps,
+)(FilterContainer);
