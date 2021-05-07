@@ -20,8 +20,9 @@ const fetchStockFailure = (error) => ({
 });
 
 const fetchStock = () => (dispatch) => {
+  const API_KEY = process.env.REACT_APP_STOCK_API_KEY;
   dispatch(fetchStockRequest);
-  axios.get('https://financialmodelingprep.com/api/v3/actives?apikey=KEY')
+  axios.get(`https://financialmodelingprep.com/api/v3/actives?apikey=${API_KEY}`)
     .then((response) => {
       const stocks = response.data;
       dispatch(fetchStockSuccess(stocks));
