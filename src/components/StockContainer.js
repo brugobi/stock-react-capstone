@@ -1,16 +1,15 @@
 /* eslint-disable */
 import React, { useEffect, useState } from 'react';
-import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import fetchStock from '../redux/stock/stockActions';
+import { Link } from 'react-router-dom';
+import FilterContainer from './FilterContainer';
 
 const StockContainer = ({ stockData, fetchStock, filter }) => {
   useEffect(() => {
     fetchStock();
   }, []);
-
-  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const profitable = filter === 'Profitable' ? '+' : '-';
   let filteredStocks =
@@ -25,6 +24,7 @@ const StockContainer = ({ stockData, fetchStock, filter }) => {
 
   } return (
     <div>
+      <FilterContainer />
       <div className="container">
         {filteredStocks.slice(0, 20).map((stock) => (
           <div className="card-wrapper">
@@ -36,18 +36,13 @@ const StockContainer = ({ stockData, fetchStock, filter }) => {
                 <p>{stock.changesPercentage}</p>
               </div>
               <div className="card-footer">
-                <button onClick={()=>setModalIsOpen(true)} className="button is-danger is-light btn-more card-footer-item">See More</button>
+                <button className="button is-danger is-light btn-more card-footer-item">
+                  <Link to="/ModalContainer">See More</Link>
+                </button>
               </div>
             </div>
           </div>
         ))}
-        <Modal isOpen={modalIsOpen} onRequestClose={()=>setModalIsOpen(false)}>
-          <h1>Modal</h1>
-          <p>Body</p>
-          <div>
-            <button onClick={() => setModalIsOpen(false)}>Close</button>
-          </div>
-        </Modal>
       </div>
     </div>
   )

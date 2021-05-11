@@ -1,15 +1,23 @@
 import { Provider } from 'react-redux';
 import './App.css';
-import FilterContainer from './components/FilterContainer';
+import {
+  Switch,
+  Route,
+} from 'react-router-dom';
 import StockContainer from './components/StockContainer';
+import ModalContainer from './components/ModalContainer';
 import store from './redux/store';
 
 function App() {
   return (
     <div className="App">
       <Provider store={store}>
-        <FilterContainer />
-        <StockContainer />
+        <>
+          <Switch>
+            <Route exact path="/" component={StockContainer} />
+            <Route exact path="/ModalContainer" component={ModalContainer} />
+          </Switch>
+        </>
       </Provider>
     </div>
   );
