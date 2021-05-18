@@ -6,7 +6,7 @@ import {
   Route,
 } from 'react-router-dom';
 import StockContainer from './components/StockContainer';
-import ModalContainer from './components/ModalContainer';
+import CompanyContainer from './components/CompanyContainer';
 import store from './redux/store';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <>
           <Switch>
             <Route exact path="/" component={StockContainer} />
-            <Route exact path="/ModalContainer" component={ModalContainer} />
+            <Route exact path="/CompanyContainer/:ticker" component={CompanyContainer} />
           </Switch>
         </>
       </Provider>

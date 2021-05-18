@@ -1,8 +1,8 @@
 /* eslint-disable */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import fetchStock from '../redux/stock/stockActions';
+import { fetchStock } from '../redux/stock/stockActions';
 import { Link } from 'react-router-dom';
 import FilterContainer from './FilterContainer';
 
@@ -37,7 +37,7 @@ const StockContainer = ({ stockData, fetchStock, filter }) => {
               </div>
               <div className="card-footer">
                 <button className="button is-danger is-light btn-more card-footer-item">
-                  <Link to="/ModalContainer">See More</Link>
+                  <Link to={`/CompanyContainer/${stock.ticker}`}>See More</Link>
                 </button>
               </div>
             </div>
