@@ -25,8 +25,9 @@ const fetchStockFailure = (error) => ({
   payload: error,
 });
 
+const API_KEY = process.env.REACT_APP_STOCK_API_KEY;
+
 export const fetchStock = () => (dispatch) => {
-  const API_KEY = process.env.REACT_APP_STOCK_API_KEY;
   dispatch(fetchStockRequest);
   axios.get(`https://financialmodelingprep.com/api/v3/actives?apikey=${API_KEY}`)
     .then((response) => {
@@ -41,9 +42,9 @@ export const fetchStock = () => (dispatch) => {
 
 export const fetchCompany = (ticker) => (dispatch) => {
   dispatch(fetchStockRequest);
-  axios.get(`https://financialmodelingprep.com/api/v3/quote/${ticker}?apikey=e0f6e8eaddd2e27fb1b248d2d05ef267`)
+  axios.get(`https://financialmodelingprep.com/api/v3/quote/${ticker}?apikey=${API_KEY}`)
     .then((response) => {
-      const company = response.data;
+      const company = response.data[0];
       dispatch(fetchCompanySuccess(company));
     })
     .catch((error) => {
@@ -51,4 +52,3 @@ export const fetchCompany = (ticker) => (dispatch) => {
       dispatch(fetchStockFailure(errorMsg));
     });
 };
-

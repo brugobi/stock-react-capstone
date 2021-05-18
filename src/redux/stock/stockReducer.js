@@ -26,7 +26,7 @@ const stockReducer = (state = initialState, action) => {
         stocks: action.payload,
         error: '',
       };
-    
+
     case FETCH_COMPANY_SUCCESS:
       return {
         ...state,

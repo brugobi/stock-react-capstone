@@ -6,46 +6,35 @@ import { fetchCompany } from '../redux/stock/stockActions';
 import { Link, useParams } from 'react-router-dom';
 
 
-const CompanyContainer = ({ stockData, fetchCompany }) => {
+const CompanyContainer = ({ stockData, loading, errorMsg, fetchCompany }) => {
   const { ticker } = useParams();
   useEffect(() => {
     fetchCompany(ticker);
   }, []);
 
-  // let stock = JSON.stringify(stockData[0])
-  // let obj_str = util.inspect(stock)
-  // console.log(stock.name)
-  if (stockData.error) {
-    return <h2>{stockData.error}</h2>
-  } if (stockData.loading) {
-    return <h2>Loading</h2>
-
-  }
-  
-  return (
+  return loading ? (
+    <h2>Loading</h2>
+  ) : errorMsg ? (
+    <h2>{errorMsg}</h2>
+  ) : (
     <div>
-      {
-        
-        console.log(stockData[0])
-      }
       <div className="container">
-        
-          <div className="card-wrapper">
-            <div className="card stock-card">
-              <div className="content">
+        <div className="card-wrapper">
+          <div className="card stock-card">
+            <div className="content">
               <div>
-                <h1>Company Information</h1>
-                <p>data</p>
-
-              </div>
-              </div>
-              <div className="card-footer">
-                <button className="button is-danger is-light btn-more card-footer-item">
-                  <Link to="/">Close</Link>
-                </button>
+                <h1>{stockData.name}</h1>
+                <h4>{stockData.symbol}</h4>
+                <p>{stockData.price}</p>
               </div>
             </div>
+            <div className="card-footer">
+              <button className="button is-danger is-light btn-more card-footer-item">
+                <Link to="/">Close</Link>
+              </button>
+            </div>
           </div>
+        </div>
       </div>
     </div>
   )
@@ -53,6 +42,8 @@ const CompanyContainer = ({ stockData, fetchCompany }) => {
 
 const mapStateToProps = (state) => ({
   stockData: state.stock.company,
+  loading: state.stock.loading,
+  errorMsg: state.stock.error,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -60,7 +51,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 CompanyContainer.propTypes = {
-  userData: PropTypes.object.isRequired,
   mapStateToProps: PropTypes.func.isRequired,
   mapDispatchToProps: PropTypes.func.isRequired,
   fetchCompany: PropTypes.func.isRequired,
