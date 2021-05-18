@@ -1,16 +1,20 @@
-/* eslint-disable */
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { fetchCompany } from '../redux/stock/stockActions';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
+import { fetchCompany } from '../redux/stock/stockActions';
 
-
-const CompanyContainer = ({ stockData, loading, errorMsg, fetchCompany }) => {
+const CompanyContainer = () => {
   const { ticker } = useParams();
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    fetchCompany(ticker);
+    dispatch(fetchCompany(ticker));
   }, []);
+
+  const stockData = useSelector((state) => state.stock.company);
+  const loading = useSelector((state) => state.stock.loading);
+  const errorMsg = useSelector((state) => state.stock.error);
 
   return loading ? (
     <h2>Loading</h2>
@@ -23,13 +27,33 @@ const CompanyContainer = ({ stockData, loading, errorMsg, fetchCompany }) => {
           <div className="card stock-card">
             <div className="content">
               <div>
-                <h1>{stockData.name}</h1>
-                <h4>{stockData.symbol}</h4>
-                <p>{stockData.price}</p>
+                <h1>
+                  {stockData.name}
+                  {' '}
+                  -
+                  {' '}
+                  {stockData.symbol}
+                </h1>
+                <p>
+                  Price - $
+                  {stockData.price}
+                </p>
+                <p>
+                  dayLow - $
+                  {stockData.dayLow}
+                </p>
+                <p>
+                  dayHigh - $
+                  {stockData.dayHigh}
+                </p>
+                <p>
+                  exchange -
+                  {stockData.exchange}
+                </p>
               </div>
             </div>
             <div className="card-footer">
-              <button className="button is-danger is-light btn-more card-footer-item">
+              <button type="button" className="button is-danger is-light btn-more card-footer-item">
                 <Link to="/">Close</Link>
               </button>
             </div>
@@ -37,26 +61,7 @@ const CompanyContainer = ({ stockData, loading, errorMsg, fetchCompany }) => {
         </div>
       </div>
     </div>
-  )
-}
-
-const mapStateToProps = (state) => ({
-  stockData: state.stock.company,
-  loading: state.stock.loading,
-  errorMsg: state.stock.error,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  fetchCompany: (ticker) => dispatch(fetchCompany(ticker)),
-});
-
-CompanyContainer.propTypes = {
-  mapStateToProps: PropTypes.func.isRequired,
-  mapDispatchToProps: PropTypes.func.isRequired,
-  fetchCompany: PropTypes.func.isRequired,
+  );
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(CompanyContainer);
+export default CompanyContainer;
