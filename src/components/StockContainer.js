@@ -1,27 +1,31 @@
 /* eslint-disable */
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { fetchStock } from '../redux/stock/stockActions';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { fetchStock } from '../redux/stock/stockActions';
 import FilterContainer from './FilterContainer';
 
-const StockContainer = ({ stockData, fetchStock, filter }) => {
+const StockContainer = () => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    fetchStock();
+    dispatch(fetchStock());
   }, []);
 
+  const stockData = useSelector((state) => state.stock);
+  const filter = useSelector((state) => state.filter);
+  const loading = useSelector((state) => state.stock.loading);
+  const errorMsg = useSelector((state) => state.stock.error);
+
   const profitable = filter === 'Profitable' ? '+' : '-';
-  let filteredStocks =
-    filter === 'All' ? stockData.stocks :
-      stockData.stocks.filter(profit => profit.changesPercentage.includes(profitable));
+  const filteredStocks = filter === 'All' ? stockData.stocks
+    : stockData.stocks.filter((profit) => profit.changesPercentage.includes(profitable));
 
   // console.log(filteredStocks, filter)
-  if (stockData.error) {
-    <h2>{stockData.error}</h2>
-  } if (stockData.loading) {
-    <h2>Loading</h2>
-
+  if (errorMsg) {
+    <h2>{stockData.error}</h2>;
+  } if (loading) {
+    <h2>Loading</h2>;
   } return (
     <div>
       <FilterContainer />
@@ -30,13 +34,17 @@ const StockContainer = ({ stockData, fetchStock, filter }) => {
           <div className="card-wrapper">
             <div className="card stock-card" key={stock.ticker}>
               <div className="content">
-                <p>({stock.ticker})</p>
+                <p>
+                  (
+                  {stock.ticker}
+                  )
+                </p>
                 <p>{stock.companyName}</p>
                 <p className="price">{stock.price}</p>
                 <p>{stock.changesPercentage}</p>
               </div>
               <div className="card-footer">
-                <button className="button is-danger is-light btn-more card-footer-item">
+                <button type="button" className="button is-danger is-light btn-more card-footer-item">
                   <Link to={`/CompanyContainer/${stock.ticker}`}>See More</Link>
                 </button>
               </div>
@@ -45,26 +53,7 @@ const StockContainer = ({ stockData, fetchStock, filter }) => {
         ))}
       </div>
     </div>
-  )
-}
-
-const mapStateToProps = (state) => ({
-  stockData: state.stock,
-  filter: state.filter,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  fetchStock: () => dispatch(fetchStock()),
-});
-
-StockContainer.propTypes = {
-  userData: PropTypes.object.isRequired,
-  mapStateToProps: PropTypes.func.isRequired,
-  mapDispatchToProps: PropTypes.func.isRequired,
-  fetchStock: PropTypes.func.isRequired,
+  );
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(StockContainer);
+export default StockContainer;
