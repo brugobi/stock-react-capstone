@@ -33,31 +33,41 @@ const CompanyContainer = () => {
               <div className="card stock-custom">
                 <div className="content">
                   <div>
-                    <h1>
+                    <h1 className="OpenSans-font color-orange">
                       {stockData.name}
                       {' '}
                       -
                       {' '}
                       {stockData.symbol}
                     </h1>
-                    <div className="price">
+                    <div className="price color-blue">
                       <p>
-                        Price - $
+                        <span className="color-gray">Price - </span>
+                        $
                         {stockData.price}
                       </p>
                       <p>
-                        dayLow - $
+                        <span className="color-gray">dayLow - </span>
+                        $
                         {stockData.dayLow}
                       </p>
                       <p>
-                        dayHigh - $
+                        <span className="color-gray">dayHigh - </span>
+                        $
                         {stockData.dayHigh}
                       </p>
+                      <p className={stockData.changesPercentage > 0 ? 'is-success' : 'is-danger'}>
+                        <span>
+                          Profite -&gt;&nbsp;
+                          {stockData.changesPercentage}
+                          %
+                        </span>
+                      </p>
                     </div>
-                    <div>
+                    <div className="exchange-div">
                       <p>
-                        exchange -
-                        {stockData.exchange}
+                        <span className="color-blue price">Exchange -&gt;&nbsp;</span>
+                        <span className="color-orange">{stockData.exchange}</span>
                       </p>
                     </div>
                   </div>

@@ -40,13 +40,13 @@ const StockContainer = () => {
                 <div className="card-wrapper">
                   <div className="card stock-custom card-effect" key={stock.ticker}>
                     <div className="content">
-                      <p>
+                      <p className="OpenSans-font color-orange">
                         (
                   {stock.ticker}
                   )
                 </p>
-                      <p>{stock.companyName}</p>
-                      <p className="price">${stock.price}</p>
+                      <p className="OpenSans-font">{stock.companyName}</p>
+                      <p className="price color-blue">${stock.price}</p>
                       <p className={stock.changesPercentage.includes('-') ? 'is-danger' : 'is-success'}>{stock.changesPercentage}</p>
                     </div>
                     <div className="card-footer">

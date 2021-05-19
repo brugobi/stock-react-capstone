@@ -16,7 +16,6 @@ const FilterContainer = ({ changeFilter }) => {
   return (
 
     <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
-
       <div className="navbar-brand">
         <div className="navbar-item">
           <div className="brand">
@@ -44,12 +43,6 @@ const FilterContainer = ({ changeFilter }) => {
           </select>
         </div>
       </div>
-
-      {/* <div className="navbar-end">
-        <IconContext.Provider value={{ size: '30px', color: '#379cf6' }}>
-          <FaUserCircle />
-        </IconContext.Provider>
-      </div> */}
     </nav>
   );
 };

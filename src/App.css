@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Goblin+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 
 * {
   box-sizing: border-box;
@@ -25,9 +26,20 @@
 }
 
 .price {
-  color: #4c79f2;
   font-weight: bold;
   font-family: "Courier New", monospace;
+}
+
+.OpenSans-font {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.color-blue {
+  color: #4c79f2;
+}
+
+.color-orange {
+  color: orange !important;
 }
 
 .is-danger {
@@ -36,6 +48,10 @@
 
 .is-success {
   color: rgb(45, 247, 45) !important;
+}
+
+.color-gray {
+  color: gray;
 }
 
 .card-effect {
@@ -68,4 +84,8 @@
 
 .is-white {
   color: white;
+}
+
+.exchange-div {
+  padding-top: 20px;
 }
