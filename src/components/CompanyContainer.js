@@ -19,7 +19,7 @@ const CompanyContainer = () => {
   switch (true) {
     case loading:
       return (
-        <h2>Loading</h2>
+        <h2 className="is-white">Loading</h2>
       );
     case errorMsg:
       return (
@@ -30,7 +30,7 @@ const CompanyContainer = () => {
         <div>
           <div className="container">
             <div className="card-wrapper">
-              <div className="card stock-card">
+              <div className="card stock-custom">
                 <div className="content">
                   <div>
                     <h1>
@@ -40,27 +40,31 @@ const CompanyContainer = () => {
                       {' '}
                       {stockData.symbol}
                     </h1>
-                    <p>
-                      Price - $
-                      {stockData.price}
-                    </p>
-                    <p>
-                      dayLow - $
-                      {stockData.dayLow}
-                    </p>
-                    <p>
-                      dayHigh - $
-                      {stockData.dayHigh}
-                    </p>
-                    <p>
-                      exchange -
-                      {stockData.exchange}
-                    </p>
+                    <div className="price">
+                      <p>
+                        Price - $
+                        {stockData.price}
+                      </p>
+                      <p>
+                        dayLow - $
+                        {stockData.dayLow}
+                      </p>
+                      <p>
+                        dayHigh - $
+                        {stockData.dayHigh}
+                      </p>
+                    </div>
+                    <div>
+                      <p>
+                        exchange -
+                        {stockData.exchange}
+                      </p>
+                    </div>
                   </div>
                 </div>
                 <div className="card-footer">
-                  <button type="button" className="button is-danger is-light btn-more card-footer-item">
-                    <Link to="/">Close</Link>
+                  <button type="button" className="btn-more-close card-footer-item">
+                    <Link to="/" className="btn-link">Close</Link>
                   </button>
                 </div>
               </div>

@@ -1,11 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Goblin+One&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   color: white;
 }
 
-.stock-card {
+.brand-name {
+  font-family: 'Goblin One', cursive;
+}
+
+.stock-custom {
   padding-top: 20px;
   border: 1px solid #4c79f2;
+  background-color: black !important;
+  box-shadow: 1px 7px 10px rgba(72, 152, 243, 0.5) !important;
 }
 
 .card-wrapper {
@@ -13,18 +25,30 @@
 }
 
 .price {
-  color: #11c511;
+  color: #4c79f2;
+  font-weight: bold;
+  font-family: "Courier New", monospace;
 }
 
-.card {
-  background-color: black !important;
+.card-effect {
+  transition: 0.5s ease-in-out;
 }
 
-.btn-more {
+.card-effect:hover {
+  transform: translateY(-20px);
+  background-color: rgb(41, 41, 41) !important;
+}
+
+.btn-more-close {
   width: 100%;
-  color: white !important;
   background-color: #4c79f2 !important;
   opacity: 60%;
+}
+
+.btn-link {
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
 }
 
 .container {
@@ -34,16 +58,6 @@
   margin: 0 15px;
 }
 
-.navbar-custom {
-  background-color: black !important;
-}
-
-.modal-wrapper {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+.is-white {
+  color: white;
 }

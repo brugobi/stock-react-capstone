@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { IconContext } from 'react-icons';
+import { AiOutlineGlobal } from 'react-icons/ai';
 import changeFilter from '../redux/stock/filter/filterActions';
 
 const FilterContainer = ({ changeFilter }) => {
@@ -13,18 +15,27 @@ const FilterContainer = ({ changeFilter }) => {
 
   return (
 
-    <nav className="navbar" role="navigation" aria-label="main navigation">
+    <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
 
       <div className="navbar-brand">
         <div className="navbar-item">
-          <div className="brand">Global Market</div>
+          <div className="brand">
+            <div>
+              <IconContext.Provider value={{ size: '40px', color: '#4c79f2' }}>
+                <AiOutlineGlobal />
+              </IconContext.Provider>
+            </div>
+            <div className="is-white brand-name">
+              Global Market
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="navbar-menu">
+      <div className="navbar-menu navbar-end">
         <div className="navbar-item">
           <div>
-            <div>Filter by: </div>
+            <div className="is-white">Filter by: </div>
           </div>
           <select name="filter" id="filter" onChange={filterByCat}>
             {categories.map((cat) => (
