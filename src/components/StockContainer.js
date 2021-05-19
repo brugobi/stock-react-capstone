@@ -31,34 +31,39 @@ const StockContainer = () => {
         <h2>{stockData.error}</h2>
       );
     default:
-      return (
-        <div>
-          <FilterContainer />
-          <div className="container">
-            {filteredStocks.slice(0, 20).map((stock) => (
-              <div className="card-wrapper">
-                <div className="card stock-card" key={stock.ticker}>
-                  <div className="content">
-                    <p>
-                      (
+      if (filteredStocks !== null) {
+        return (
+          <div>
+            <FilterContainer />
+            <div className="container">
+              {filteredStocks.slice(0, 20).map((stock) => (
+                <div className="card-wrapper">
+                  <div className="card stock-card" key={stock.ticker}>
+                    <div className="content">
+                      <p>
+                        (
                   {stock.ticker}
                   )
                 </p>
-                    <p>{stock.companyName}</p>
-                    <p className="price">{stock.price}</p>
-                    <p>{stock.changesPercentage}</p>
-                  </div>
-                  <div className="card-footer">
-                    <button type="button" className="button is-danger is-light btn-more card-footer-item">
-                      <Link to={`/CompanyContainer/${stock.ticker}`}>See More</Link>
-                    </button>
+                      <p>{stock.companyName}</p>
+                      <p className="price">{stock.price}</p>
+                      <p>{stock.changesPercentage}</p>
+                    </div>
+                    <div className="card-footer">
+                      <button type="button" className="button is-danger is-light btn-more card-footer-item">
+                        <Link to={`/CompanyContainer/${stock.ticker}`}>See More</Link>
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      );
+        );
+      }
+      return (
+        <h2>OMG! no company here...how is this possible?</h2>
+      )
   }
 };
 
