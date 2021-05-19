@@ -47,7 +47,7 @@ const StockContainer = () => {
                 </p>
                       <p>{stock.companyName}</p>
                       <p className="price">${stock.price}</p>
-                      <p>{stock.changesPercentage}</p>
+                      <p className={stock.changesPercentage.includes('-') ? 'is-danger' : 'is-success'}>{stock.changesPercentage}</p>
                     </div>
                     <div className="card-footer">
                       <button type="button" className="is-white btn-more-close card-footer-item">

@@ -30,6 +30,14 @@
   font-family: "Courier New", monospace;
 }
 
+.is-danger {
+  color: rgb(233, 57, 57) !important;
+}
+
+.is-success {
+  color: rgb(45, 247, 45) !important;
+}
+
 .card-effect {
   transition: 0.5s ease-in-out;
 }
