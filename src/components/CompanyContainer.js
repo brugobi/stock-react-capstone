@@ -56,7 +56,7 @@ const CompanyContainer = () => {
                         $
                         {stockData.dayHigh}
                       </p>
-                      <p className={stockData.changesPercentage > 0 ? 'is-success' : 'is-danger'}>
+                      <p className={stockData.changesPercentage >= 0 ? 'is-success' : 'is-danger'}>
                         <span>
                           Profite -&gt;&nbsp;
                           {stockData.changesPercentage}
