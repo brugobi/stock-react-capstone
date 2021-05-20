@@ -31,7 +31,7 @@ const FilterContainer = ({ changeFilter }) => {
         </div>
       </div>
 
-      <div className="navbar-menu navbar-end">
+      <div className="navbar-end">
         <div className="navbar-item">
           <div>
             <div className="is-white">Filter by: </div>
