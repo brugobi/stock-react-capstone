@@ -15,7 +15,7 @@ const FilterContainer = ({ changeFilter }) => {
 
   return (
 
-    <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
+    <nav className="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <div className="navbar-item">
           <div className="brand">
