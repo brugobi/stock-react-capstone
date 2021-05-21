@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/stock-react-capstone/static/css/main.9834a677.chunk.css",
-    "main.js": "/stock-react-capstone/static/js/main.ee27c5d1.chunk.js",
-    "main.js.map": "/stock-react-capstone/static/js/main.ee27c5d1.chunk.js.map",
+    "main.css": "/stock-react-capstone/static/css/main.4392b6e2.chunk.css",
+    "main.js": "/stock-react-capstone/static/js/main.aa4fd605.chunk.js",
+    "main.js.map": "/stock-react-capstone/static/js/main.aa4fd605.chunk.js.map",
     "runtime-main.js": "/stock-react-capstone/static/js/runtime-main.6ff1888d.js",
     "runtime-main.js.map": "/stock-react-capstone/static/js/runtime-main.6ff1888d.js.map",
     "static/css/2.bae58746.chunk.css": "/stock-react-capstone/static/css/2.bae58746.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.c2de9f58.chunk.js.map": "/stock-react-capstone/static/js/2.c2de9f58.chunk.js.map",
     "index.html": "/stock-react-capstone/index.html",
     "static/css/2.bae58746.chunk.css.map": "/stock-react-capstone/static/css/2.bae58746.chunk.css.map",
-    "static/css/main.9834a677.chunk.css.map": "/stock-react-capstone/static/css/main.9834a677.chunk.css.map",
+    "static/css/main.4392b6e2.chunk.css.map": "/stock-react-capstone/static/css/main.4392b6e2.chunk.css.map",
     "static/js/2.c2de9f58.chunk.js.LICENSE.txt": "/stock-react-capstone/static/js/2.c2de9f58.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6ff1888d.js",
     "static/css/2.bae58746.chunk.css",
     "static/js/2.c2de9f58.chunk.js",
-    "static/css/main.9834a677.chunk.css",
-    "static/js/main.ee27c5d1.chunk.js"
+    "static/css/main.4392b6e2.chunk.css",
+    "static/js/main.aa4fd605.chunk.js"
   ]
 }
