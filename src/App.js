@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import './App.css';
 import {
+  BrowserRouter as Router,
   Switch,
   Route,
 } from 'react-router-dom';
@@ -13,12 +14,14 @@ function App() {
   return (
     <div className="App">
       <Provider store={store}>
-        <>
-          <Switch>
-            <Route exact path="/" component={StockContainer} />
-            <Route exact path="/CompanyContainer/:ticker" component={CompanyContainer} />
-          </Switch>
-        </>
+        <Router>
+          <>
+            <Switch>
+              <Route exact path="/" component={StockContainer} />
+              <Route exact path="/CompanyContainer/:ticker" component={CompanyContainer} />
+            </Switch>
+          </>
+        </Router>
       </Provider>
     </div>
   );
