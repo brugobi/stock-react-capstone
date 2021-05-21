@@ -36,7 +36,7 @@ const StockContainer = () => {
           <div>
             <FilterContainer />
             <div className="container">
-              {filteredStocks.slice(0, 20).map((stock) => (
+              {filteredStocks.slice(0, 100).map((stock) => (
                 <div className="card-wrapper">
                   <div className="card stock-custom card-effect" key={stock.ticker}>
                     <div className="content">

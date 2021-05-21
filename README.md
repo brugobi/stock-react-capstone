@@ -1,8 +1,18 @@
 # Global Stock
  
-> React Project and deployment to gh-pages.
+> The project consists of a frontend application that displays financial information from an API, and stores it in the Redux store. The main features of this app are:
 
-// ![calculator_page](./src/images/calculator.png)
+- Ability to display a list of companies
+- Filter companies stocks according to categories
+- Access the details of each company
+
+### Home Page
+
+![home](./src/images/home.png)
+
+### Company Page
+
+![company](./src/images/company.png)
 
 ## Built With
 
@@ -10,10 +20,11 @@
 - React.JS
 - gh-pages
 - Node.js
-- Big.js
+- Bulma
 - prop-types
 - Jest
 - Enzyme
+- Stock API:[financialmodeling](https://financialmodelingprep.com/developer/docs/)
 
 ## Live Version
 
