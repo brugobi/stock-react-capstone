@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import FilterContainer from '../components/FilterContainer';
 import store from '../redux/store';
 
-describe('Filter', () => {
+describe('FilterContainer />', () => {
   let wrapper;
 
   beforeEach(() => {
