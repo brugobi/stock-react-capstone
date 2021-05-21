@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -37,16 +36,19 @@ const StockContainer = () => {
             <FilterContainer />
             <div className="container">
               {filteredStocks.slice(0, 100).map((stock) => (
-                <div className="card-wrapper">
-                  <div className="card stock-custom card-effect" key={stock.ticker}>
+                <div className="card-wrapper" key={stock.ticker}>
+                  <div className="card stock-custom card-effect">
                     <div className="content">
                       <p className="OpenSans-font color-orange">
                         (
-                  {stock.ticker}
-                  )
-                </p>
+                        {stock.ticker}
+                        )
+                      </p>
                       <p className="OpenSans-font">{stock.companyName}</p>
-                      <p className="price color-blue">${stock.price}</p>
+                      <p className="price color-blue">
+                        $
+                        {stock.price}
+                      </p>
                       <p className={stock.changesPercentage.includes('-') ? 'is-danger' : 'is-success'}>{stock.changesPercentage}</p>
                     </div>
                     <div className="card-footer">
@@ -63,7 +65,7 @@ const StockContainer = () => {
       }
       return (
         <h2>OMG! no company here...how is this possible?</h2>
-      )
+      );
   }
 };
 
