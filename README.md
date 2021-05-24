@@ -1,6 +1,6 @@
 # Global Stock
  
-> The project consists of a frontend application that displays financial information from an API, and stores it in the Redux store. The main features of this app are:
+> Global Stock is a catalogue of companies on the stock market. The project consists of a frontend application that displays financial information from an API, and stores it in the Redux store. The main features of this app are:
 
 - Ability to display a list of companies
 - Filter companies stocks according to categories
@@ -24,7 +24,7 @@
 - prop-types
 - Jest
 - Enzyme
-- Stock API:[financialmodeling](https://financialmodelingprep.com/developer/docs/)
+- Stock API: [financialmodeling](https://financialmodelingprep.com/developer/docs/)
 
 ## Live Version
 
