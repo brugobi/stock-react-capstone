@@ -74,7 +74,7 @@ const CompanyContainer = () => {
                 </div>
                 <div className="card-footer">
                   <button type="button" className="btn-more-close card-footer-item">
-                    <Link to="/" className="btn-link">Close</Link>
+                    <Link to="/stock-react-capstone/" className="btn-link">Close</Link>
                   </button>
                 </div>
               </div>
