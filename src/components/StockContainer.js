@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { fetchStock } from '../redux/stock/stockActions';
 import FilterContainer from './FilterContainer';
+import StockItems from './stocks/StockItems';
 
 const StockContainer = () => {
   const dispatch = useDispatch();
@@ -32,35 +32,14 @@ const StockContainer = () => {
     default:
       if (filteredStocks !== null) {
         return (
-          <div>
+          <>
             <FilterContainer />
             <div className="container">
               {filteredStocks.slice(0, 100).map((stock) => (
-                <div className="card-wrapper" key={stock.ticker}>
-                  <div className="card stock-custom card-effect">
-                    <div className="content">
-                      <p className="OpenSans-font color-orange">
-                        (
-                        {stock.ticker}
-                        )
-                      </p>
-                      <p className="OpenSans-font">{stock.companyName}</p>
-                      <p className="price color-blue">
-                        $
-                        {stock.price}
-                      </p>
-                      <p className={stock.changesPercentage.includes('-') ? 'is-danger' : 'is-success'}>{stock.changesPercentage}</p>
-                    </div>
-                    <div className="card-footer">
-                      <button type="button" className="is-white btn-more-close card-footer-item">
-                        <Link to={`/CompanyContainer/${stock.ticker}`} className="btn-link">See More</Link>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <StockItems key={stock.ticker} company={stock} />
               ))}
             </div>
-          </div>
+          </>
         );
       }
       return (
