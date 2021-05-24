@@ -17,7 +17,7 @@ function App() {
         <Router>
           <>
             <Switch>
-              <Route exact path="/" component={StockContainer} />
+              <Route exact path="/stock-react-capstone/" component={StockContainer} />
               <Route exact path="/CompanyContainer/:ticker" component={CompanyContainer} />
             </Switch>
           </>
