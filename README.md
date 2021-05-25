@@ -1,4 +1,4 @@
-# Global Stock
+# Catalogue of Statistics
  
 > Global Stock is a catalogue of companies on the stock market. The project consists of a frontend application that displays financial information from an API, and stores it in the Redux store. The main features of this app are:
 

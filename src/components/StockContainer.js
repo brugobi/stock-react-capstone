@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchStock } from '../redux/stock/stockActions';
 import FilterContainer from './FilterContainer';
-import StockItems from './stocks/StockItems';
+import StockItems from '../container/StockItems';
 
 const StockContainer = () => {
   const dispatch = useDispatch();
