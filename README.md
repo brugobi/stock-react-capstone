@@ -35,7 +35,8 @@ You can click on this [link](https://brugobi.github.io/stock-react-capstone/)
 ### Prerequisites
 
 - Node.js
-- Any Brownser
+- Any Brownse
+- API KEY from [financialmodeling](https://financialmodelingprep.com/developer/docs/)
 
 To get started open the directory where you will save this repo by typing on your terminal:
 
@@ -54,9 +55,21 @@ $ git clone git@github.com:brugobi/stock-react-capstone.git
 $ npm install
 ```
 
+- Install [dotenv](https://www.npmjs.com/package/dotenv):
+
+```
+$ npm install dotenv
+```
+
+- in the root create a file called **.env** and add:
+
+```
+REACT_APP_STOCK_API_KEY=your API key
+```
+
 ### Usage
 
-- Start the React server:
+- Sfter set up the API key you can start the React server:
 
 ```
 $ npm start
