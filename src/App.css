@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Goblin+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  color: white;
+}
+
+.brand-name {
+  font-family: 'Goblin One', cursive;
+}
+
+.stock-custom {
+  padding-top: 20px;
+  border: 1px solid #4c79f2;
+  background-color: black !important;
+  box-shadow: 1px 7px 10px rgba(72, 152, 243, 0.5) !important;
+}
+
+.card-wrapper {
+  padding-top: 30px;
+}
+
+.price {
+  font-weight: bold;
+  font-family: "Courier New", monospace;
+}
+
+.OpenSans-font {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.color-blue {
+  color: #4c79f2;
+}
+
+.color-orange {
+  color: orange !important;
+}
+
+.is-danger {
+  color: rgb(233, 57, 57) !important;
+}
+
+.is-success {
+  color: rgb(45, 247, 45) !important;
+}
+
+.color-gray {
+  color: gray;
+}
+
+.card-effect {
+  transition: 0.5s ease-in-out;
+}
+
+.card-effect:hover {
+  transform: translateY(-20px);
+  background-color: rgb(41, 41, 41) !important;
+}
+
+.btn-more-close {
+  width: 100%;
+  background-color: #4c79f2 !important;
+}
+
+.btn-link {
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 15px;
+  padding-top: 150px;
+}
+
+.is-white {
+  color: white;
+}
+
+.exchange-div {
+  padding-top: 20px;
+}
